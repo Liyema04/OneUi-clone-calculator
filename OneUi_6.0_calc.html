@@ -9,86 +9,95 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> 
     </head>
     <body>
+        <header>
+        </header>  
         <!--Flip container for calculator and back face-->
         <div class="calc-flip-container">
             <div class="calc-flip-card" id="calcFlipCard">
                 <!-- Back face -->
                 <div class="calc-flip-face calc-flip-back">
                     <div class="back-content">
-                        <img class="welcome-svg" src="/Samsung OneUi calculator/Tabs/Icons (.svg)/calculator-minimalistic-svgrepo-com.svg" alt="Calculator Icon">
+                        <img class="welcome-svg" src="Tabs/Icons-svg/calculator-minimalistic-svgrepo-com.svg" alt="Calculator Icon">
                         <span class="back-text">Welcome to OneUi Calculator</span>
                         <!-- Place this button where you want.-->
                         <button id="tryItBtn">Try it out!</button>
                     </div>    
                 </div>
                 <!-- Front face (calculator) -->
-                <div class="calc-flip-face calc-flip-front">      
-                    <div class="calculator" id="calculator">
-                        <table border="4">
-                            <tr>
-                                <td colspan="4">
-                                    <input type="text" id="inputBox" value="0">
-                                </td>
-                                <td colspan="2"></td>
-                                <td class="historyButton" id="historyBtn">
-                                    <img src="Tabs/Icons (.svg)/history-svgrepo-com.svg" alt="History" class="history-svg">
-                                </td>
-                                <!-- Scientific mode -->
-                                <td class="sciButton" id="sciBtn">
-                                    <img src="Tabs/Icons (.svg)/test-tube-minimalistic-svgrepo-com.svg" alt="Scientific" class="sci-svg" id="testTubeIcon">
-                                    <img src="Tabs/Icons (.svg)/calculator-minimalistic-svgrepo-com.svg" alt="Calculator" class="sci-svg" id="calcIcon" style="display: none;">
-                                </td>
-                            </tr>
-                            <!-- Scientific buttons visible when mode[enabled]  -->
-                            <tbody id="sciFuncRows" style="display: none;">
+                <div class="calc-flip-face calc-flip-front">
+                    <div class="frontFaceTabs">
+                        <nav>
+                            <ul>
+                                <button class="unit-covertBtn" id="unitConvTab" onclick=""><img src="/Tabs/Icons-svg/ruler-svgrepo-com.svg" alt="Unit Conversion" class="ruler-svg" id="unitConvIcon">Unit converter</button>
+                            </ul>
+                        </nav>
+                    </div>     
+                        <div class="calculator" id="calculator">
+                            <table border="4">
                                 <tr>
-                                    <td class="sciFuncBtn" colspan="2"  onclick="sciFuncPressed('sin')">sin</td>
-                                    <td class="sciFuncBtn" colspan="2" onclick="sciFuncPressed('cos')">cos</td>
-                                    <td class="sciFuncBtn" colspan="3" onclick="sciFuncPressed('tan')">tan</td>
+                                    <td colspan="4">
+                                        <input type="text" id="inputBox" value="0">
+                                    </td>
+                                    <td colspan="2"></td>
+                                    <td class="historyButton" id="historyBtn">
+                                        <img src="Tabs/Icons-svg/history-svgrepo-com.svg" alt="History" class="history-svg">
+                                    </td>
+                                    <!-- Scientific mode -->
+                                    <td class="sciButton" id="sciBtn">
+                                        <img src="Tabs/Icons-svg/test-tube-minimalistic-svgrepo-com.svg" alt="Scientific" class="sci-svg" id="testTubeIcon">
+                                        <img src="Tabs/Icons-svg/calculator-minimalistic-svgrepo-com.svg" alt="Calculator" class="sci-svg" id="calcIcon" style="display: none;">
+                                    </td>
+                                </tr>
+                                <!-- Scientific buttons visible when mode[enabled]  -->
+                                <tbody id="sciFuncRows" style="display: none;">
+                                    <tr>
+                                        <td class="sciFuncBtn" colspan="2"  onclick="sciFuncPressed('sin')">sin</td>
+                                        <td class="sciFuncBtn" colspan="2" onclick="sciFuncPressed('cos')">cos</td>
+                                        <td class="sciFuncBtn" colspan="3" onclick="sciFuncPressed('tan')">tan</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sciFuncBtn" colspan="2" onclick="sciFuncPressed('sqrt')">√</td>
+                                        <td class="sciFuncBtn" colspan="2" onclick="sciFuncPressed('pow2')">x²</td>
+                                        <td class="sciFuncBtn" colspan="3" onclick="sciFuncPressed('pi')">π</td>
+                                    </tr>
+                                </tbody>
+                                <tr>
+                                    <td class="digitButton" onclick="digitBtnPressed(7)">7</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(8)">8</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(9)">9</td>
+                                    <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('*')">x</td> <!--Operator Event Handler-->
                                 </tr>
                                 <tr>
-                                    <td class="sciFuncBtn" colspan="2" onclick="sciFuncPressed('sqrt')">√</td>
-                                    <td class="sciFuncBtn" colspan="2" onclick="sciFuncPressed('pow2')">x²</td>
-                                    <td class="sciFuncBtn" colspan="3" onclick="sciFuncPressed('pi')">π</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(4)">4</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(5)">5</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(6)">6</td>
+                                    <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('-')">-</td> <!--Operator Event Handler-->
                                 </tr>
-                            </tbody>
-                            <tr>
-                                <td class="digitButton" onclick="digitBtnPressed(7)">7</td>
-                                <td class="digitButton" onclick="digitBtnPressed(8)">8</td>
-                                <td class="digitButton" onclick="digitBtnPressed(9)">9</td>
-                                <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('*')">x</td> <!--Operator Event Handler-->
-                            </tr>
-                            <tr>
-                                <td class="digitButton" onclick="digitBtnPressed(4)">4</td>
-                                <td class="digitButton" onclick="digitBtnPressed(5)">5</td>
-                                <td class="digitButton" onclick="digitBtnPressed(6)">6</td>
-                                <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('-')">-</td> <!--Operator Event Handler-->
-                            </tr>
-                            <tr>
-                                <td class="digitButton" onclick="digitBtnPressed(1)">1</td>
-                                <td class="digitButton" onclick="digitBtnPressed(2)">2</td>
-                                <td class="digitButton" onclick="digitBtnPressed(3)">3</td>
-                                <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('+')">+</td> <!--Operator Event Handler-->
-                            </tr>
-                            <tr>
-                                <td class="digitButton" colspan="2"  onclick="digitBtnPressed(0)">0</td>
-                                <td class="digitButton" onclick="decimalBtnPressed()">.</td> <!--Decimal Event Handler-->
-                                <td class="ACButton" onclick="btnACPressed()">AC</td>
-                                <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('/')">÷</td> <!--Operator Event Handler-->
-                            </tr>
-                            <tr>
-                                <td class="equalsButton" colspan="7" onclick="equalsBtnPressed()">=</td>
-                            </tr>
-                        </table>
-                        <!-- History Popup -->
-                        <div id="historyPopup" class="history-popup">
-                            <div class="history-popup-content">
-                                <span class="close-history" id="closeHistoryBtn">&times;</span>
-                                <h2>Calculation History</h2>
-                                <ul id="historyList"></ul>
+                                <tr>
+                                    <td class="digitButton" onclick="digitBtnPressed(1)">1</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(2)">2</td>
+                                    <td class="digitButton" onclick="digitBtnPressed(3)">3</td>
+                                    <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('+')">+</td> <!--Operator Event Handler-->
+                                </tr>
+                                <tr>
+                                    <td class="digitButton" colspan="2"  onclick="digitBtnPressed(0)">0</td>
+                                    <td class="digitButton" onclick="decimalBtnPressed()">.</td> <!--Decimal Event Handler-->
+                                    <td class="ACButton" onclick="btnACPressed()">AC</td>
+                                    <td class="operatorButton" colspan="4" onclick="operatorBtnPressed('/')">÷</td> <!--Operator Event Handler-->
+                                </tr>
+                                <tr>
+                                    <td class="equalsButton" colspan="7" onclick="equalsBtnPressed()">=</td>
+                                </tr>
+                            </table>
+                            <!-- History Popup -->
+                            <div id="historyPopup" class="history-popup">
+                                <div class="history-popup-content">
+                                    <span class="close-history" id="closeHistoryBtn">&times;</span>
+                                    <h2>Calculation History</h2>
+                                    <ul id="historyList"></ul>
+                                </div>
                             </div>
-                        </div>
-                    </div> 
+                        </div> 
                 </div>           
             </div>    
         </div>

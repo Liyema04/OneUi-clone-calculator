@@ -109,21 +109,48 @@ td {
 }
 .calc-flip-card {
     width: 100%;
-    height: 500px; /*What ever fits*/
+    height: 600px; /* Increased to accommodate tabs */
     position: relative;
     transform-style: preserve-3d;
 }
 .calc-flip-face {
     position: absolute;
     width: 100%;
-    height: 500px;
+    height: 600px; /* Match the card height */
     backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+/* Placing for unit conveter tab */
+.frontFaceTabs {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 16px;
+}
+
+.frontFaceTabs nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.unit-covertBtn {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 8px 0;
+    cursor: pointer;
+    gap: 8px;
+    
+}
+
 .calc-flip-front {
     z-index: 2;
+    flex-direction: column;
 }
 .calc-flip-back {
     background: none;
@@ -162,6 +189,18 @@ td {
     color: #ffffff;
     font-size: 25px;
     font-weight: 400;
+}
+
+
+/* Unit Converter Tab */
+
+#unitConvIcon {
+    display: inline-flex;
+}
+.ruler-svg {
+    width: 24px;
+    height: 24px;
+    filter: invert(54%) sepia(91%) saturate(749%) hue-rotate(130deg) brightness(95%) contrast(92%);
 }
 
 /* History Button */
