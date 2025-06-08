@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/Tabs/Icons-svg/(.*)", "dest": "/public/Tabs/Icons-svg/$1" },
+    { "src": "/(.*)", "dest": "/src/index.html" }
+  ],
+  "build": {
+    "env": {
+      "API_KEY": "@api_key"
+    }
+  }
+}
