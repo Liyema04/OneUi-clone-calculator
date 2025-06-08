@@ -1,0 +1,23 @@
+{
+  "name": "samsung-oneui-calculator",
+  "version": "1.0.0",
+  "main": "OneUi_6.0_script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liyema04/OneUi-clone-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liyema04/OneUi-clone-calculator/issues"
+  },
+  "homepage": "https://github.com/Liyema04/OneUi-clone-calculator#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
