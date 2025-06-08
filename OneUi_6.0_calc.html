@@ -28,7 +28,7 @@
                     <div class="frontFaceTabs">
                         <nav>
                             <ul>
-                                <button class="unit-covertBtn" id="unitConvTab" onclick=""><img src="/Tabs/Icons-svg/ruler-svgrepo-com.svg" alt="Unit Conversion" class="ruler-svg" id="unitConvIcon">Unit converter</button>
+                                <span class="unit-covertBtn" id="unitConvTab"><img src="/Tabs/Icons-svg/ruler-svgrepo-com.svg" alt="Unit Conversion" class="ruler-svg" id="unitConvIcon"> Unit converter</span>
                             </ul>
                         </nav>
                     </div>     
@@ -98,7 +98,23 @@
                                 </div>
                             </div>
                         </div> 
-                </div>           
+                </div>
+                <!-- Loading screen -->
+                <div class="unitConvLoading-screen calc-flip-face">
+                    <div class="loadScreen-content">
+                        <img class="welcome-svg" src="/Tabs/Icons-svg/ruler-svgrepo-com.svg" alt="Ruler Icon on Loading Screen">
+                        <span class="back-text-loading">Coming soon...</span>
+                        <div class="loading-progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <br>
+                        <br>
+                        <button id="backToCalcBtn" onclick="backToCalculator()">Back</button>  
+                    </div>
+                </div>
+                <div class="UnitConvrtActive calc-flip-face" id="unitConvrtActive">
+
+                </div>            
             </div>    
         </div>
     </body>

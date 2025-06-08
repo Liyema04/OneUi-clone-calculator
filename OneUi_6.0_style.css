@@ -135,7 +135,7 @@ td {
     margin: 0;
 }
 
-.unit-covertBtn {
+ ul {
     background: transparent;
     border: none;
     display: flex;
@@ -145,7 +145,6 @@ td {
     padding: 8px 0;
     cursor: pointer;
     gap: 8px;
-    
 }
 
 .calc-flip-front {
@@ -163,6 +162,13 @@ td {
 .back-text {
     font-family: 'SamsungOne', Arial, Helvetica, sans-serif;
     text-align: center;
+}
+
+.back-text-loading {
+    font-family: 'SamsungOne', Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
 }
 
 .back-content {
@@ -198,8 +204,8 @@ td {
     display: inline-flex;
 }
 .ruler-svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     filter: invert(54%) sepia(91%) saturate(749%) hue-rotate(130deg) brightness(95%) contrast(92%);
 }
 
@@ -311,4 +317,37 @@ td {
 
 .sciFuncBtn:active {
     background: #44474f;
+}
+
+/* Loading screen styles */
+.unitConvLoading-screen {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    backface-visibility: hidden;
+    background: #23272e;
+    border-radius: 32px;
+    display: none;
+    transform: rotateY(180deg);
+    z-index: 3;
+}
+
+.loadScreen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Loading screen elements */
+#backToCalcBtn {
+    background-color: #09e7d570;
+    margin-top: 20px;
+    padding: 10px;
+    border: #09e7d570;
+    border-radius: 16px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 400;
 }

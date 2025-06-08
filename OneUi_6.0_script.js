@@ -10,6 +10,22 @@ window.addEventListener('DOMContentLoaded', function() {
         easing: 'easeInOutSine'
     });
 
+    // Add unit converter button listener
+    document.getElementById('unitConvTab').addEventListener('click', function() {
+        const loadingScreen = document.querySelector('.unitConvLoading-screen');
+        loadingScreen.style.display = 'block';
+        
+        anime({
+            targets: '#calcFlipCard',
+            rotateY: [0, 180],
+            duration: 1200,
+            easing: 'easeInOutSine',
+            complete: function() {
+                document.querySelector('.calc-flip-front').style.display = 'none';
+            }
+        });
+    });
+
     // Event listeners after DOM is loaded
     document.getElementById('historyBtn').addEventListener('click', showHistory);
     document.getElementById('closeHistoryBtn').addEventListener('click', hideHistory);
@@ -171,4 +187,52 @@ document.getElementById('tryItBtn').addEventListener('click', function() {
         duration: 1200,
         easing: 'easeInOutSine'
     });
+});
+
+// Unit Converter Button Click-Handler
+document.getElementById('uniConvTab').addEventListener('click', function() {
+    const loadingScreen = document.querySelector('.unitConvLoading-screen');
+    loadingScreen.style.display = 'block';
+
+    //Flip animation to loading screen
+    anime({
+        targets: '#calcFlipCard',
+        rotateY: [0, 180],
+        duration: 1200,
+        easing: 'easeInOutSine',
+        complete: function() {
+            // Animation completed
+            document.querySelector('.calc-flip-front').style.display = 'none';
+        }
+    }); 
+});
+
+//Flips back to calculator
+function backToCalculator() {
+    const loadingScreen = document.querySelector('.unitConvLoading-screen');
+    document.querySelector('.calc-flip-front').style.display = 'flex';
+
+    anime({
+        targets: '#calcFlipCard',
+        rotateY: [180, 0],
+        duration: 1200,
+        easing: 'easeInOutSine',
+        complete: function() {
+            loadingScreen.style.display = 'none';
+        }
+    });
+} 
+
+// Unit Conversion API 
+$.ajax({
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/unitconversion?amount=5&unit=meter',
+    headers: { 'X-Api-Key': 'pHYGjb+vE4E8BdiezPPiyg==twHfGOHrmoRanvxq'},
+    contentType: 'application/json',
+    success: function(result) {
+        console.log(result);
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
 });
