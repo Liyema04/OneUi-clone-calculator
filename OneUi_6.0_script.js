@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Page window : Open Animation
 window.addEventListener('DOMContentLoaded', function() {
     // Start with back face visible
@@ -223,11 +225,11 @@ function backToCalculator() {
     });
 } 
 
-// Unit Conversion API 
+// Unit Conversion API - !SECURED!
 $.ajax({
     method: 'GET',
     url: 'https://api.api-ninjas.com/v1/unitconversion?amount=5&unit=meter',
-    headers: { 'X-Api-Key': 'pHYGjb+vE4E8BdiezPPiyg==twHfGOHrmoRanvxq'},
+    headers: { 'X-Api-Key': process.env.API_KEY},
     contentType: 'application/json',
     success: function(result) {
         console.log(result);
