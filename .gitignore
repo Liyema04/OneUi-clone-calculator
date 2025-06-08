@@ -7,6 +7,9 @@ secure.env
 # Dependencies
 /node_modules
 
+# Build output
+.vercel
+
 # IDE specific files
 .vscode
 .idea
