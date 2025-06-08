@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 // Page window : Open Animation
 window.addEventListener('DOMContentLoaded', function() {
     // Start with back face visible
@@ -223,7 +221,10 @@ function backToCalculator() {
             loadingScreen.style.display = 'none';
         }
     });
-} 
+}
+
+
+;require('dotenv').config();
 
 // Unit Conversion API - !SECURED!
 $.ajax({
@@ -237,4 +238,4 @@ $.ajax({
     error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
     }
-});
+})
