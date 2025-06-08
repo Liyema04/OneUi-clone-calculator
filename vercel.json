@@ -1,10 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "src/**/*", "use": "@vercel/static" }
-  ],
   "routes": [
-    { "src": "/", "dest": "/src/index.html" },
+    { "src": "/", "dest": "/src/OneUi_6.0_calc.html" },
     { "src": "/styles/(.*)", "dest": "/src/styles/$1" },
     { "src": "/scripts/(.*)", "dest": "/src/scripts/$1" },
     { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
