@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/Tabs/Icons-svg/(.*)", "dest": "/public/Tabs/Icons-svg/$1" },
-    { "src": "/(.*)", "dest": "/src/index.html" }
+  "builds": [
+    { "src": "src/**/*", "use": "@vercel/static" }
   ],
-  "build": {
-    "env": {
-      "API_KEY": "$API_KEY"
-    }
+  "routes": [
+    { "src": "/", "dest": "/src/index.html" },
+    { "src": "/styles/(.*)", "dest": "/src/styles/$1" },
+    { "src": "/scripts/(.*)", "dest": "/src/scripts/$1" },
+    { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+    { "src": "/(.*)", "dest": "/src/$1" }
+  ],
+  "env": {
+    "API_KEY": "$API_KEY"
   }
 }
