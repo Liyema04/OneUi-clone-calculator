@@ -1,12 +1,6 @@
 {
   "version": 2,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/", "dest": "/public/index.html" },
-    { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
-    { "src": "/styles/(.*)", "dest": "/public/styles/$1" },
-    { "src": "/scripts/(.*)", "dest": "/public/scripts/$1" }
-  ],
+  "public": "public",
   "env": {
     "API_KEY": "$API_KEY"
   }
