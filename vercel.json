@@ -1,11 +1,11 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/", "dest": "/src/OneUi_6.0_calc.html" },
-    { "src": "/styles/(.*)", "dest": "/src/styles/$1" },
-    { "src": "/scripts/(.*)", "dest": "/src/scripts/$1" },
+    { "handle": "filesystem" },
+    { "src": "/", "dest": "/public/index.html" },
     { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
-    { "src": "/(.*)", "dest": "/src/$1" }
+    { "src": "/styles/(.*)", "dest": "/public/styles/$1" },
+    { "src": "/scripts/(.*)", "dest": "/public/scripts/$1" }
   ],
   "env": {
     "API_KEY": "$API_KEY"
